@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"></meta>
+  <title>PageMask</title>	
+  <script type="text/javascript"></script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 微軟正黑體;          
+        }    
+        
+        .finishloading .circle{
+            opacity: 0;
+        }
+        html ,body{
+            width: 100%;
+            height: 2400px;
+            background-color: #364547;            
+        }
+        .page{
+            width: 100%;
+            height: 2400px;
+        }
+        .timer{
+            position:absolute;
+            top: 320px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color:#f8ede3;
+            font-size: 18px;
+        }       
+        .circle{
+            position: absolute;
+            left: calc(50% - 30px);
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.5s; 
+        }
+        .circle:before, .circle:after{
+            content: "";
+            display: block;
+            border-radius: 100%;
+            width: 16px;
+            height: 16px;
+            z-index: 100;
+            position: absolute;            
+            top: 50%;            
+            background-color: rgb(233, 227, 227);            
+            transition: 0.5s;
+            animation: move 2s infinite linear;
+        }
+        .circle:before{
+            animation-delay: 0s;
+        }
+        .circle:after{
+            animation-delay: -1s;
+        }
+        @keyframes move{
+            0%{
+                left:  0px;
+                transform: scale(0.8);
+                opacity: 0.8;      
+            }
+            25%{
+                transform: scale(1); 
+                opacity: 1;
+            }
+            50%{ 
+                left: 50px;
+                transform: scale(1.5);   
+                opacity: 0.8;             
+            }
+            75%{
+                transform: scale(0.6);
+                opacity: 0.6;
+            }
+            100%{ 
+                left: 0px;               
+                transform: scale(0.8); 
+                opacity: 0.8;                
+            }
+        }
+        @-webkit-keyframes move{
+            0%{
+                left:  0px;
+                transform: scale(0.8);
+                opacity: 0.8;      
+            }
+            25%{
+                transform: scale(1); 
+                opacity: 1;
+            }
+            50%{ 
+                left: 50px;
+                transform: scale(1.5);   
+                opacity: 0.8;             
+            }
+            75%{
+                transform: scale(0.6);
+                opacity: 0.6;
+            }
+            100%{ 
+                left: 0px;               
+                transform: scale(0.8); 
+                opacity: 0.8;                
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="page loading ">        
+        <div class="circle"></div>
+        <div class="timer" id="timer">100</div>        
+    </div>
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    let timer;
+        window.onload=function(){
+            timer=document.getElementById("timer");
+            window.setTimeout(countdown, 20);
+        }
+        function countdown(){
+            timer.innerHTML=timer.innerHTML-1;
+            if(timer.innerHTML>0){
+                window.setTimeout(countdown, 20);                
+            }else{
+                $(document).ready(function(){
+                $(".page").addClass("finishloading");
+                });
+                $("#timer").fadeOut();
+                document.location="http://127.0.0.1:80/test.html";
+            }
+        };
+    </script>
+
+</body>
+</html>
