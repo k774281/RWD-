@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RWD 試排版</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .image-group{
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        img{
+            vertical-align: bottom;  /* 圖片與文字間因為基準線關係有小空隙, 設定bottom消除空隙*/
+        }
+        .title{
+            margin: 0px 0px 20px;
+            background-color: #ccc;
+            padding: 30px 10px;
+        }
+        .title h2{
+            text-align: center;
+            font-size: 36px;
+        }
+        .item{
+            margin: 1px 10px 20px;
+        }
+        .item .pic img{
+            width: 100%;            
+        }
+        .item .text h3{
+            font-size: 18px;
+        }
+        .footer{
+            color:#ccc;
+            text-align: center;
+        }
+        @media screen and (min-width: 768px){
+            .image-group{
+                display: flex;
+            }
+            .service .item{
+                display:flex;
+            }
+            .service .item .pic,
+            .service .item .text{
+                width: 50%;
+                margin: 0;
+            }
+            .service .item .text{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="banner">
+        <img src="https://picsum.photos/1400/500?random=2" alt="">        
+    </div>
+    <div class="about">
+        <div class="wrap">
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus explicabo magni voluptatum, eos, quam, quae consequuntur deleniti ipsum dolorum est consectetur qui. Velit, ab id. Similique nisi quis mollitia aliquam, delectus velit est repudiandae! Quaerat accusamus impedit laborum consequatur voluptate ab, illo, aliquid at debitis officiis tempora labore iste facere.</p>
+            </div>
+            <div class="image-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=3" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=4" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=5" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="wrap">
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=5" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="wrap">
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus explicabo magni voluptatum, eos, quam, quae consequuntur deleniti ipsum dolorum est consectetur qui. Velit, ab id. Similique nisi quis mollitia aliquam, delectus velit est repudiandae! Quaerat accusamus impedit laborum consequatur voluptate ab, illo, aliquid at debitis officiis tempora labore iste facere.</p>
+            </div>
+            <div class="image-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=3" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=4" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=6" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="pic">
+            <img src="https://picsum.photos/500/400?random=7" alt="">
+        </div>
+        <div class="text">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quis vel error rerum sequi itaque molestiae blanditiis eveniet porro consequuntur.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; copyright 2021 by csscoke
+    </div>
+</body>
+</html>

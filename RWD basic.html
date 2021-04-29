@@ -1,144 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8"></meta>
-  <title>PageMask</title>	
-  <script type="text/javascript"></script>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RWD basic</title>
     <style type="text/css">
         *{
             margin: 0;
             padding: 0;
-            font-family: 微軟正黑體;          
-        }    
-        
-        .finishloading .circle{
-            opacity: 0;
+            list-style: none;  /* 將第一個 ul 標籤的項目符號由原本預設的「●」不顯示並且有排序 */
         }
-        html ,body{
+        .wrap{
             width: 100%;
-            height: 2400px;
-            background-color: #364547;            
+
+            /* 
+            ● max-width 屬性的功能是用來限制網頁元素最大寬度不可以超過指定的限度，如果你有一張圖片或是一個影片，會隨著父層或螢幕的大小而自動縮放，可是總不能無止盡的放大，如果超出適宜瀏覽的大小，畫面就會很難看。
+
+            ● 數值必須可以被 2、3、4、5、6 整除，因為考慮到欄數。
+            */
+
+            max-width: 1400px;
+            margin:auto;
         }
-        .page{
-            width: 100%;
-            height: 2400px;
-        }
-        .timer{
-            position:absolute;
-            top: 320px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color:#f8ede3;
-            font-size: 18px;
-        }       
-        .circle{
-            position: absolute;
-            left: calc(50% - 30px);
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: 0.5s; 
-        }
-        .circle:before, .circle:after{
-            content: "";
-            display: block;
-            border-radius: 100%;
-            width: 16px;
-            height: 16px;
-            z-index: 100;
-            position: absolute;            
-            top: 50%;            
-            background-color: rgb(233, 227, 227);            
-            transition: 0.5s;
-            animation: move 2s infinite linear;
-        }
-        .circle:before{
-            animation-delay: 0s;
-        }
-        .circle:after{
-            animation-delay: -1s;
-        }
-        @keyframes move{
-            0%{
-                left:  0px;
-                transform: scale(0.8);
-                opacity: 0.8;      
-            }
-            25%{
-                transform: scale(1); 
-                opacity: 1;
-            }
-            50%{ 
-                left: 50px;
-                transform: scale(1.5);   
-                opacity: 0.8;             
-            }
-            75%{
-                transform: scale(0.6);
-                opacity: 0.6;
-            }
-            100%{ 
-                left: 0px;               
-                transform: scale(0.8); 
-                opacity: 0.8;                
-            }
-        }
-        @-webkit-keyframes move{
-            0%{
-                left:  0px;
-                transform: scale(0.8);
-                opacity: 0.8;      
-            }
-            25%{
-                transform: scale(1); 
-                opacity: 1;
-            }
-            50%{ 
-                left: 50px;
-                transform: scale(1.5);   
-                opacity: 0.8;             
-            }
-            75%{
-                transform: scale(0.6);
-                opacity: 0.6;
-            }
-            100%{ 
-                left: 0px;               
-                transform: scale(0.8); 
-                opacity: 0.8;                
+        .item{
+            margin: 0px 10px 20px;
+            background-color: aquamarine;
+            padding: 10px;            
+        }        
+        /* 製作平板螢幕尺寸 */
+        @media screen and (min-width: 768px){
+            .wrap{
+                display: flex;
             }
         }
     </style>
 
 </head>
 <body>
-    <div class="page loading ">        
-        <div class="circle"></div>
-        <div class="timer" id="timer">100</div>        
+    <div class="wrap">        
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum saepe fuga. Officiis voluptates esse optio possimus! Quod, sint, molestiae enim similique ex rem doloremque, eaque modi sapiente omnis reprehenderit inventore incidunt libero corporis provident! Recusandae dolores enim libero, corrupti illo corporis modi non cupiditate explicabo quas nihil magnam dolore.</p>
+        </div>        
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum saepe fuga. Officiis voluptates esse optio possimus! Quod, sint, molestiae enim similique ex rem doloremque, eaque modi sapiente omnis reprehenderit inventore incidunt libero corporis provident! Recusandae dolores enim libero, corrupti illo corporis modi non cupiditate explicabo quas nihil magnam dolore.</p>
+        </div>        
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum saepe fuga. Officiis voluptates esse optio possimus! Quod, sint, molestiae enim similique ex rem doloremque, eaque modi sapiente omnis reprehenderit inventore incidunt libero corporis provident! Recusandae dolores enim libero, corrupti illo corporis modi non cupiditate explicabo quas nihil magnam dolore.</p>
+        </div>
     </div>
-    
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-
-    let timer;
-        window.onload=function(){
-            timer=document.getElementById("timer");
-            window.setTimeout(countdown, 20);
-        }
-        function countdown(){
-            timer.innerHTML=timer.innerHTML-1;
-            if(timer.innerHTML>0){
-                window.setTimeout(countdown, 20);                
-            }else{
-                $(document).ready(function(){
-                $(".page").addClass("finishloading");
-                });
-                $("#timer").fadeOut();
-                document.location="http://127.0.0.1:80/test.html";
-            }
-        };
-    </script>
-
 </body>
 </html>

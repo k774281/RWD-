@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RWD 漢堡選單</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #menu-control{
+            position: absolute; /* 讓lebel消失 */
+        }
+        .header{
+            height: 50px;
+            background-color: #aa2ee6;
+            position: relative; /*設定相對定位為 header, 在 menu-btn 才會以這個為基準*/
+        }
+        .logo{
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;            
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+        }
+        .logo img{
+            display: block;
+            position: absolute;
+            top:5px;
+        }
+        .menu-btn{
+            width: 40px;
+            height: 40px;
+            background-color: #23049d;
+            display: block;  /*設定寬高無效時, 可知此為inline屬性, 此時需要設定回block, 才可作用*/
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            border-radius: 4px;
+        }
+        span{
+            opacity: 0; /*讓文字消失*/
+        }
+        .menu-btn::before{
+            content: "";
+            position: absolute;
+            left:2px;
+            width: 36px;
+            height: 2px;
+            background-color: #ffdf6b;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            /*當物件設定絕對定位之後，預設它是抓不到整體可運用空間的範圍，所以 margin: auto 此時會失效，但當你設定了 top: 0; bottom: 0 時，絕對定位物件就抓到可運用的空間了，這時你的 margin: auto 就生效了(神奇吧)，如果你的絕對定位物件需要水平置中於父層，那你同樣可以設定 left: 0; right: 0; 來讓絕對定位物件取得空間可運用範圍，再讓 margin-left 與 margin-right 設定為 auto 即可置中。但此方式的缺點是你的定位物件必須有固定的寬高（％數也可）才能正常置中。*/
+            box-shadow: 0px 8px 0px #ffdf6b,
+                        0px -8px 0px #ffdf6b;
+            /* 利用box-shadow 做出另外兩個水平線，由左至右屬性分別為 x 軸、Y 軸、模糊度 */
+        }
+        nav{
+            width: 80%;
+            height: calc( 100vh - 50px); /* 計算機: 100vh - 上面header的長度 */
+            background-color: #ff79cd;
+            position: absolute;
+            top: 50px;
+            left: -100%;  /* 讓下拉選單消失在左側，點擊之後才會出現 */
+            transition: all 0.5s;
+        }
+        nav a{
+            position:relative;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #72147e;
+            border-bottom: 1px solid #72147e;
+        }
+        /* 當 menu-control 被點到的時候 header 裡面的 nav 要出現*/
+        #menu-control:checked ~ .header nav{
+            left: 0;
+        }
+        @media screen and (min-width: 768px){
+            .menu-btn{ display: none; }
+            .header{
+                display: flex;
+                justify-content: space-between;
+                background-color: #ff79cd;
+                align-items: center;
+            }
+            nav{               
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+            }
+            nav a{
+                border-bottom: 0px;
+                color:#ffdf6b;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <input type="checkbox" name="" id="menu-control"> <!--確認選單有被點擊到, 即打勾-->
+
+    <div class="header">
+        <h1 class="logo">
+            <a href="#"><img src="https://picsum.photos/60/40?random=2"> <!--logo連結用圖片表示-->
+            </a>
+        </h1>
+        <label for="menu-control" class="menu-btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </nav>
+    </div>
+
+</body>
+</html>
