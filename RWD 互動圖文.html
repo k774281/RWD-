@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>RWD 網頁切板</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;    
+            font-family: 'Noto Sans TC', sans-serif;        
+        }
+        .wrap{
+            width: 100%;
+            display: flex;
+        }
+        .item{
+            width: 25%;
+            height: 200px;
+        }
+        .item img{
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .item .txt{  
+            width: 25%;
+            height: 200px;          
+            position: absolute;
+            /* 使文字蓋在圖片上 */
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,.6);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            opacity: 0;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .item:hover .txt{
+            opacity: 1;
+        }        
+        .item h2{
+            color:silver;
+        }
+        .item h2:after{
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            margin: 10px 0px;
+            background-color: #f21170;
+            transition: 0.5s;
+        }
+        .item:hover h2:after{
+            width:100%;
+        }
+        .item p{
+            color: silver;
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1598260650504-f83ac9508d65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="txt">
+                <h2>烘焙體驗課程</h2>
+                <p>不需要準備任何材料，現場提供專業器具多種甜品可選擇，iPad 自助甜點教學，現場服務人員協助，現場提供飲品</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1600353565318-2e8ed228435d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+            <div class="txt">
+                <h2>包場服務</h2>
+                <p>企業活動<br>
+                   團體課程<br>
+                   生日聚會</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1519692548406-72146873010c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+            <div class="txt">
+                <h2>活動策劃</h2>
+                <p>到府服務<br>
+                   活動籌畫</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1558874985-75c4d28d8d7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+            <div class="txt">
+                <h2>商品販售</h2>
+                <p>Home系列烘焙材料<br>
+                    周邊商品販售<br>
+                    質感精品</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
