@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>網頁切板</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">    
+    
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;    
+            font-family: 'Noto Sans TC', sans-serif;        
+        }
+        body{
+            padding: 100px 0px;
+            background: linear-gradient(20deg, #ffddcc, #ffc93c) fixed center center/ 100% 100%
+            /* fixed 避免漸層跟隨畫面移動, center center X及Y軸定位, 100%寬高*/
+        }
+        .wrap{
+            width: 1200px;
+            margin: auto;
+        }
+        .item{           
+            display: flex;
+            align-items: center;
+            margin-bottom: 70px;            
+        }
+        .pic{
+            width: 55%;
+            height: 300px; 
+            flex-shrink: 0; /*不自動伸縮*/
+        }
+        .pic img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        .txt{
+            width: 55%;
+            background-color: hsl(333, 81%, 40%, 0.8);
+            flex-shrink: 0;
+            padding: 50px 50px;
+            box-sizing: border-box; /* 不超出格線 */
+            position: relative; /* 相對定位後, 才會回復原位 */
+            z-index: 1;
+            color:black;
+        }
+        .item > :first-child{ /* 讓item裡的第一層, 右邊貼齊 */
+            margin-right: -10%;
+        }
+        .item:nth-child(1) .txt{
+            background-color: rgba(red, green, blue, alpha);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <div class="pic">
+                <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+            </div>
+            <div class="txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+            <div class="pic">
+                <img src="https://images.unsplash.com/photo-1597249536924-b226b1a1259d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" alt="">
+            </div>            
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://images.unsplash.com/photo-1604337153691-65d6e238df68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1344&q=80" alt="">
+            </div>
+            <div class="txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+            <div class="pic">
+                <img src="https://images.unsplash.com/photo-1611464047877-5af5143e3f68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

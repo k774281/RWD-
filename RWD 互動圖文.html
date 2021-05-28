@@ -2,19 +2,153 @@
 <html>
 <head>
     <meta charset="utf-8"></meta>
-    <title>RWD 網頁切板</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>RWD 網頁切板</title>    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <link href="file:///D:/Microsoft%20VS%20Code/CSS/all.css" rel="stylesheet">
     <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
         *{
             margin: 0;
             padding: 0;
-            list-style: none;    
-            font-family: 'Noto Sans TC', sans-serif;        
+            list-style: none;
+            font-family: 'Open Sans', sans-serif;
         }
+        #menu-control{
+            position: absolute; /* 讓lebel消失 */
+        }
+        .header{
+            height: 50px;
+            background-color: #aa2ee6;
+            position: relative; /*設定相對定位為 header, 在 menu-btn 才會以這個為基準*/
+        }
+        .logo{
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;            
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+        }
+        .logo img{
+            display: block;
+            position: absolute;
+            top:5px;
+        }
+        .menu-btn{
+            width: 40px;
+            height: 40px;
+            background-color: #23049d;
+            display: block;  /*設定寬高無效時, 可知此為inline屬性, 此時需要設定回block, 才可作用*/
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            border-radius: 4px;
+        }
+        span{
+            opacity: 0; /*讓文字消失*/
+        }
+        .menu-btn::before{
+            content: "";
+            position: absolute;
+            left:2px;
+            width: 36px;
+            height: 2px;
+            background-color: #ffdf6b;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            /*當物件設定絕對定位之後，預設它是抓不到整體可運用空間的範圍，所以 margin: auto 此時會失效，但當你設定了 top: 0; bottom: 0 時，絕對定位物件就抓到可運用的空間了，這時你的 margin: auto 就生效了(神奇吧)，如果你的絕對定位物件需要水平置中於父層，那你同樣可以設定 left: 0; right: 0; 來讓絕對定位物件取得空間可運用範圍，再讓 margin-left 與 margin-right 設定為 auto 即可置中。但此方式的缺點是你的定位物件必須有固定的寬高（％數也可）才能正常置中。*/
+            box-shadow: 0px 8px 0px #ffdf6b,
+                        0px -8px 0px #ffdf6b;
+            /* 利用box-shadow 做出另外兩個水平線，由左至右屬性分別為 x 軸、Y 軸、模糊度 */
+        }
+        .header nav{
+            width: 80%;
+            height: calc( 100vh - 50px); /* 計算機: 100vh - 上面header的長度 */
+            background-color: #ff449f;
+            position: absolute;
+            top: 50px;
+            left: -100%;  /* 讓下拉選單消失在左側，點擊之後才會出現 */
+            transition: all 0.5s;
+        }
+        .header nav a{
+            position:relative;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #72147e;
+            border-bottom: 1px solid #72147e;
+        }
+        /* 當 menu-control 被點到的時候 header 裡面的 nav 要出現*/
+        #menu-control:checked ~ .header nav{
+            left: 0;
+        }
+        @media screen and (min-width: 768px){
+            .menu-btn{ display: none; }
+            .header{
+                display: flex;
+                justify-content: space-between;
+                background-color: #ff449f;
+                align-items: center;
+            }
+            .header nav{               
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+            }
+            .header nav a{
+                border-bottom: 0px;
+                color:#ffdf6b;
+            }
+        }
+
+        /* banner */
+        .banner{
+            width: 100%;
+            height: 500px;
+            background-color: #a6d6d6;
+            background: 
+                    linear-gradient(115deg, #a6d6d6 50%, transparent 50%)
+                    center center / 100% 100%,
+                    url(https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) right center/ auto 100% ;
+        }
+        .container{
+            width: 100%;
+            max-width: 1440px;
+            height: 100%;
+            margin: auto;
+        }
+        .banner-txt{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }        
+        .banner-txt h1{
+            border-bottom: 1px solid #21094e;
+            font-size: 48px;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.3em;
+        }
+        .banner-txt h1 small{
+            display: block;
+            font-size: 36px;
+        }
+        .banner-txt h2{
+            font-size: 24px;
+        }
+        .banner-txt p{
+            font-size: 12px;
+        }
+
+        /* first */
         .wrap{
             width: 100%;
             display: flex;
@@ -33,7 +167,7 @@
             height: 200px;          
             position: absolute;
             /* 使文字蓋在圖片上 */
-            top: 0;
+            top: 550px;
             bottom: 0;
             background-color: rgba(0,0,0,.6);
             display: flex;
@@ -65,12 +199,231 @@
         .item p{
             color: silver;
         }
+
+        /* second*/
+
+        body{            
+            background: linear-gradient(20deg, #ffddcc, #ffc93c) fixed center center/ 100% 100%
+            /* fixed 避免漸層跟隨畫面移動, center center X及Y軸定位, 100%寬高*/
+        }
+        .second_wrap{
+            width: 1200px;
+            padding: 100px 50px;
+            margin: auto;
+        }
+        .second_item{           
+            display: flex;
+            align-items: center;
+            margin-bottom: 70px;            
+        }
+        .second_pic{
+            width: 55%;
+            height: 300px;
+            flex-shrink: 0; /*不自動伸縮*/
+        }
+        .second_pic img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        .second_txt{
+            width: 55%;
+            background-color: hsl(333, 81%, 40%, 0.8);
+            flex-shrink: 0;
+            padding: 50px 50px;
+            box-sizing: border-box; /* 不超出格線 */
+            position: relative; /* 相對定位後, 才會回復原位 */
+            z-index: 1;
+            color:black;
+        }
+        .second_item > :first-child{ /* 讓item裡的第一層, 右邊貼齊 */
+            margin-right: -10%;
+        }
+
+        /* third */
+        .third_wrap{
+            height: 300px;
+            display: flex;
+        }
+        .third_container{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+        }
+        .third_item{
+            width: 370px; /* 1200/4 扣掉margin 15px*2 */
+            margin: 0 15px; 
+            display: flex;
+            background: white;
+            box-shadow: 0 10px 30px hsl(160, 0%, 0%, 0.5);
+        }
+        .third_pic{
+            width: 50%;            
+        }
+        .third_pic img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .third_txt{
+            width: 50%;            
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;            
+        }
+        .third_container .btn{
+            line-height: 1.5em;
+            color: #005792;
+            border: 1px solid #afb9c8;
+            padding: 0 0.2em;
+            align-self: flex-end;
+            border-radius: 200px;
+            margin-top: auto;
+            text-decoration: none;
+        }
+        .third_container .btn:hover{
+            background: #afb9c8;
+            color: #d1d9d9;
+        }
+        /* fourth */
+        .fourth_wrap{
+            width: 1200px;            
+            display: flex;
+            margin: 100px auto;
+        }
+        .fourth_item{
+            width: 368px;
+            margin: 15px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid #afb9c8;
+            transition: 0.5s;
+        }
+        .fourth_item img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        .fourth_item h2{
+           border-bottom: 1px solid #afb9c8; 
+           padding-bottom: 0.3em;
+           margin-bottom: 0.3em;
+           font-weight: 700;
+        }
+        .fourth_item p{
+            line-height: 1.5;
+        }
+        .fourth_item .fourth_txt{
+            padding: 20px;
+            position: relative;
+        }
+        .fourth_item .fourth_txt:before{
+            content: "";
+            position: absolute;/* 等於 display: block */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0px;
+            height: 0px;            
+            border-top: 50px solid transparent;
+            border-bottom: 0px solid white;
+            border-left: 184px solid white;
+            border-right: 184px solid white;
+            transform: translateY(-100%);
+        }
+        .fourth_item:hover{
+            transform: translateY(-50px);            
+        }
+        .fourth_item:hover .fourth_txt:before{
+            border-left: 184px solid #e93b81;
+            border-right: 184px solid #e93b81;
+        }
+        .fourth_item:hover .fourth_txt{
+            background-image: linear-gradient(0deg, #f5abc9, #e93b81);
+        }
+        .main_footer .five_container{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+        }
+        .main_footer .footer_item{
+            width: 0px;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .main_footer nav{
+            display: flex;
+            flex-direction: column;
+        }
+        .main_footer nav a{
+            text-decoration: none;
+            color: #1b1a17;
+            line-height: 3px;
+            padding: 5px 0;
+        }
+        .main_footer h4{
+            font-size: 24px;
+            border-bottom: 1px dotted #eba83a;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.3em;
+        }
+        
+        .copyright{
+            text-align: center;
+            margin-top: 150px;
+            padding: 10px 0px;
+            background-color: #eba83a;
+            color: white;
+        }
     </style>
     <script type="text/javascript">
 
     </script>
 </head>
 <body>
+
+    <input type="checkbox" name="" id="menu-control"> <!--確認選單有被點擊到, 即打勾-->
+
+    <div class="header">
+        <h1 class="logo">
+            <a href="#"><img src="https://picsum.photos/60/40?random=2"> <!--logo連結用圖片表示-->
+            </a>
+        </h1>
+        <label for="menu-control" class="menu-btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </nav>
+    </div>
+
+
+    <div class="banner">
+        <div class="container">
+            <div class="banner-txt">
+                <h1>
+                    Dessert Do It Yourself.
+                    <small>
+                        How to do your dessert
+                    </small>
+                </h1>
+                <h2>Our menu delicious food</h2>
+                <p>點選菜單圖片後會有詳細介紹，提供甜點蛋糕烘焙DIY手作課程，
+                <br>不僅以手藝傳遞滿滿心意。除了自助烘焙體驗外，也歡迎企業團體包場烘焙。</p>
+            </div>
+        </div>
+    </div>
+
+
     <div class="wrap">
         <div class="item">
             <img src="https://images.unsplash.com/photo-1598260650504-f83ac9508d65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="">
@@ -105,6 +458,143 @@
                     質感精品</p>
             </div>
         </div>
+    </div>
+
+    <div class="second_wrap">
+        <div class="second_item">
+            <div class="second_pic">
+                <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+            </div>
+            <div class="second_txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+        </div>
+        <div class="second_item">
+            <div class="second_txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+            <div class="second_pic">
+                <img src="https://images.unsplash.com/photo-1597249536924-b226b1a1259d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" alt="">
+            </div>            
+        </div>
+        <div class="second_item">
+            <div class="second_pic">
+                <img src="https://images.unsplash.com/photo-1604337153691-65d6e238df68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1344&q=80" alt="">
+            </div>
+            <div class="second_txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+        </div>
+        <div class="second_item">
+            <div class="second_txt">
+                <h2>Macaron</h2>
+                <p>馬卡龍（法語：macaron，法語發音：[makaʁɔ̃][1]），又稱作瑪卡龍、法式小圓餅、杏仁小圓餅，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+            </div>
+            <div class="second_pic">
+                <img src="https://images.unsplash.com/photo-1611464047877-5af5143e3f68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+            </div>            
+        </div>
+    </div>
+
+    <div class="third_wrap">
+        <div class="third_container">
+            <div class="third_item">
+                <div class="third_pic">
+                    <img src="https://images.unsplash.com/photo-1563589173312-476d8c36b242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=658&q=80" alt="">
+                </div>
+                <div class="third_txt">
+                    <h3>Macaron</h3>
+                    <p>馬卡龍，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <div class="third_item">
+                <div class="third_pic">
+                    <img src="https://images.unsplash.com/photo-1560180474-e8563fd75bab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                </div>
+                <div class="third_txt">
+                    <h3>Macaron</h3>
+                    <p>馬卡龍，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <div class="third_item">
+                <div class="third_pic">
+                    <img src="https://images.unsplash.com/photo-1609873539027-d4ad052cb6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                </div>
+                <div class="third_txt">
+                    <h3>Macaron</h3>
+                    <p>馬卡龍，是一種用色彩繽紛絢麗的法國甜品，外殼堅硬但易碎，內陷黏稠扎實，口感其妙，因為其極度可愛優雅，馬卡龍色也成為了一種時尚配色方案。</p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fourth_wrap">
+        <div class="fourth_item">
+            <img src="https://images.unsplash.com/photo-1610555248279-adea4c523fb3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="">
+            <div class="fourth_txt">
+                <h2>person_1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius sapiente et deleniti perferendis delectus tempore quos nam nihil voluptas odio neque quasi, eaque molestias velit dicta deserunt ipsam dolore.</p>
+            </div>
+        </div>
+        <div class="fourth_item">
+            <img src="https://images.unsplash.com/photo-1558339136-19ee57afe7a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="">
+            <div class="fourth_txt">
+                <h2>person_2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius sapiente et deleniti perferendis delectus tempore quos nam nihil voluptas odio neque quasi, eaque molestias velit dicta deserunt ipsam dolore.</p>
+            </div>
+        </div>
+        <div class="fourth_item">
+            <img src="https://images.unsplash.com/photo-1610490689129-26c48e3cb975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80" alt="">
+            <div class="fourth_txt">
+                <h2>person_3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius sapiente et deleniti perferendis delectus tempore quos nam nihil voluptas odio neque quasi, eaque molestias velit dicta deserunt ipsam dolore.</p>
+            </div>
+        </div>
+    </div>
+    <div class="main_footer">
+        <div class="five_container">
+            <div class="footer_item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="#"><i class="fas fa-angle-right"></i>品牌介紹</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>服務項目</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>菜單介紹</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>情境體驗</a>
+                </nav>
+            </div>
+            <div class="footer_item">
+                <h4>更多資訊</h4>
+                <nav>
+                    <a href="#"><i class="fas fa-angle-right"></i>常見問題</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>異業合作</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>加盟資訊</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>聯絡我們</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>取消/更改預約方式</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>退款方式</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>服務條款</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>隱私權聲明</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>分店資訊</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>部落格</a>
+                </nav>
+            </div>
+            <div class="footer_item footer_searchBtn">
+                <h4>搜尋</h4>
+                <form>
+                    <input type="search" name="" id="">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        版權所有，未經許可，不許轉載 &copy;2021 Yummy Yummy Sweet CO,LTD. All Right Reserved.
+
     </div>
 </body>
 </html>
