@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>方塊酥板面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <link href="file:///D:/Microsoft%20VS%20Code/CSS/all.css" rel="stylesheet">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;    
+            font-family: 'Noto Sans TC', sans-serif;        
+        }
+        body{
+            background-color: #f3f4ed;
+        }
+        .pic-wrap{
+            width: 960px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .pic-wrap .item{
+            width: 50%;
+            float: left;  
+            position: relative;          
+        }
+        .pic-wrap img{
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            object-fit: cover;
+        }
+        .item:first-child{
+            width: 50%;
+        }
+        .item:first-child ~ .item{
+            width: 25%;
+        }
+        .pic-wrap .txt{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .item:hover .txt{
+            display: flex;
+        }
+        .item h4{
+            margin-bottom: 6px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="pic-wrap">
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1584846359049-b0f2fee9d613?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80" alt="">
+            <div class="txt">
+                <h4>線上優惠組</h4>
+                <p>2021母親節的首四日優惠組合一公布，人氣明星商品一字排開全都入列</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1585879304131-665d6cf7ee21?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+            <div class="txt">
+                <h4>官網獨家優惠</h4>
+                <p>經典明星商品給您日夜保養修護、透亮無瑕的年輕肌膚與妝感！ 每位女性都能變得更自信動人！</p>
+            </div>            
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1546541866-706231a598d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="">
+            <div class="txt">
+                <h4>暢銷產品</h4>
+                <p>全能緊緻精華 小白瓶 水精華原生露 微分子高保濕。淨白雙花能量超導晶萃。</p>
+            </div>        
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1565498253128-c06e0488ddee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80" alt="">
+            <div class="txt">
+                <h4>伴手禮</h4>
+                <p>萃取植物性的第三代角鯊烷，促進肌膚修護，乳油木之堅果植物性油脂，達高保濕調理肌膚之作用。 </p>
+            </div>        
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1565087170449-fa23854a6100?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80" alt="">
+            <div class="txt">
+                <h4>香氛</h4>
+                <p>香水是一個人的隱形名片、代表著專屬的生活風格，對香水迷來說，除了收藏香水，懂得用香、了解香氛知識會帶來更深更有感的體驗</p>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

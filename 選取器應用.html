@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>選取器</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <link href="file:///D:/Microsoft%20VS%20Code/CSS/all.css" rel="stylesheet">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;    
+            font-family: 'Noto Sans TC', sans-serif;        
+        }
+        input:checked + span{
+            color:red;
+        }
+        #mummy:checked ~ div{
+            color:red;
+        }
+
+        /* 按鈕開關 */
+        .checkbox{
+            position: absolute; /* 方框消失 */
+            opacity: 0;            
+        }
+        .btn-box{            
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color:  #969696;
+            border-radius: 100px;
+            box-shadow: 0px 3px 0px rgba(116, 114, 114, 0.7) inset;
+            vertical-align: middle;
+        }
+        .btn{
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f0f1f1;
+            box-shadow: 1px 2px 0px rgba(116, 114, 114, 0.5);
+            transition: 0.3s;
+        }
+        .checkbox:checked + .btn-box{
+            background-color: #a5e1ad;
+        }
+        .checkbox:checked + .btn-box .btn{
+            margin-left: 20px;
+        }
+        .text{
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+<body>
+
+    <input type="checkbox" name="" id="mummy">
+
+    <div>
+        <label>
+            <input type="checkbox" name="" id="">        
+            <span>Yummy Yummy</span>
+        </label>
+    </div>
+    
+    <label for="mummy">mummy</label>
+
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod mollitia quisquam facilis voluptatem asperiores magni cupiditate inventore amet quae ab.</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod mollitia quisquam facilis voluptatem asperiores magni cupiditate inventore amet quae ab.</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod mollitia quisquam facilis voluptatem asperiores magni cupiditate inventore amet quae ab.</div>
+
+    <!-- 按鈕開關 -->
+    <div>
+        <label>
+            <input type="checkbox" name="" id="" class="checkbox">
+            <span class="btn-box">
+                <span class="btn"></span>
+            </span>
+            <span class="text">Word</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="" id="" class="checkbox">
+            <span class="btn-box">
+                <span class="btn"></span>
+            </span>
+            <span class="text">Word</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="" id="" class="checkbox">
+            <span class="btn-box">
+                <span class="btn"></span>
+            </span>
+            <span class="text">Word</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="" id="" class="checkbox">
+            <span class="btn-box">
+                <span class="btn"></span>
+            </span>
+            <span class="text">Word</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="" id="" class="checkbox">
+            <span class="btn-box">
+                <span class="btn"></span>
+            </span>
+            <span class="text">Word</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="" id="" class="checkbox">
+            <span class="btn-box">
+                <span class="btn"></span>
+            </span>
+            <span class="text">Word</span>
+        </label>
+    </div>
+</body>
+</html>

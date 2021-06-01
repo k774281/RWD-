@@ -19,17 +19,19 @@
         }
         .main_header .container{
             display: flex;
+            flex-direction: column;
             max-width: 1200px;
             margin: auto;
             padding: 20px;
             align-items: center;
         }
         .main_header .logo{
-            width: 60px;
+            width: 60px;            
         }
         .main_header img{
             width: 100%;
             vertical-align: middle;
+            border-radius: 10px;
         }
         .main_header nav{
             margin: auto;
@@ -60,24 +62,7 @@
             left: 0%;
             right: 0%;
         }
-        .main_header .header-search{
-            display: flex;
-        }
-        .main_header input,
-        .main_header button{
-            border: none;
-            padding: 5px 10px;
-            background-color: #f6e5e9;
-        }
-        .main_header input:focus{
-            outline: none;
-        }
-        .main_header input{
-            border-radius: 200px 0 0 200px;
-        }
-        .main_header button{
-            border-radius: 0 200px 200px 0;
-        }
+
     </style>
 
 </head>
@@ -94,11 +79,7 @@
                 <a href="#">服務項目</a>
                 <a href="#">社群</a>
                 <a href="#">商城</a>
-            </nav>
-            <form class="header-search">
-                <input type="search" name="" id="">
-                <button><i class="fas fa-search"></i></button>
-            </form>
+            </nav>            
         </div>
     </div>
 </body>
