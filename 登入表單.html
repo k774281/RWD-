@@ -14,7 +14,61 @@
             list-style: none;    
             font-family: 'Noto Sans TC', sans-serif;        
         }
-        
+        html, body{
+            height: 100%;
+        }
+        body{
+            background: url(https://images.unsplash.com/photo-1567160895307-ebd008647a00?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80) no-repeat center center/ cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login{
+            width: 400px;
+            height: 400px;
+            background-color: rgba(57, 62, 70, 0.6);
+            border-radius: 5px;
+            border: 3px solid #eeeeee;
+            box-shadow: 0 0 30px #393e46;
+            backdrop-filter: blur(3px); /* 模糊度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-form{
+            width: 300px;
+            color: #eeeeee;
+        }
+        .login-form h2{
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #aaa;
+        }
+        .login-form .form-group{
+            margin-bottom: 20px;
+        }
+        .login-form label{
+            line-height: 3;
+        }
+        .login-form input{
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            line-height: 2;
+        }
+        .login-form .btn-group{
+            font-size: 0; /* 中間縫隙 */
+        }
+        .login-form .login-btn{
+            font-size: 16px;
+            border: none;
+            border-radius: 3px;
+            width: 140px;
+            padding: 5px 0;
+        }
+        .login-form .login-btn + .login-btn{
+            margin-left: 20px;
+        }
     </style>
 
 </head>
@@ -23,15 +77,15 @@
     <div class="login">
         <form class="login-form">
             <h2>登入</h2>
-            <div class="group">
+            <div class="form-group">
                 <label for="user-id">帳號</label>
                 <input type="text" name="" id="user-id">
             </div>
-            <div class="group">
+            <div class="form-group">
                 <label for="user-password">密碼</label>
                 <input type="text" name="" id="user-password">
             </div>
-            <div class="group">
+            <div class="btn-group">
                 <button class="login-btn">登入</button>
                 <button class="login-btn">取消</button>
             </div>
