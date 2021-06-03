@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>時間軸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <link href="file:///D:/Microsoft%20VS%20Code/CSS/all.css" rel="stylesheet">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;    
+            font-family: 'Noto Sans TC', sans-serif;        
+        }
+        body{
+            background-color: #e1f1dd;
+        }
+        .timeline-wrap{
+            width: 960px;
+            margin: auto;
+        }
+        /*  */
+        .timeline-wrap:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0;
+            clear: both;
+        }
+        /* 帶有float屬性, 200px不作用, 需要在.timeline-wrap:after 進行設定 */
+        .timeline{
+            padding: 50px 0 200px;
+        }
+        .timeline li{
+            width: 50%;
+            padding: 50px 0px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .timeline li::before{
+            content: "";
+            position: absolute;
+            top:0; /* 設定top跟bottom 為 0 ,再margin=auto 置中 */
+            bottom:0;
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #564a4a;
+            z-index: 2;
+        }        
+        .timeline li:nth-child(odd){
+            float: left;
+            padding-right: 100px;
+        }
+        .timeline li:nth-child(even){
+            float: right;
+            padding-left: 100px;
+            transform: translateY(50%);
+        }
+        .timeline li:nth-child(odd)::before{
+            right:-10px;            
+        }
+        .timeline li:nth-child(even)::before{
+            left: -10px;            
+        }
+        .timeline li:nth-child(even):after{
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #87a7b3;
+            top: -25px;
+            left: 0;
+        } 
+        
+        .timeline li:last-child:after{
+            /* 使線長不延伸到底, 只到最後一格的一半 */
+            height: 60%;
+        }
+        .timeline a{
+            display: block; /* 單純設定邊框不會有效果, 需添加block */
+            text-decoration: none;
+            background-color: #eeeeee;
+            color: #393e46;
+            border: 3px solid #766161;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 3px #665555;
+        }
+        .timeline a:hover{
+            background-color: #cdc7be;
+        }
+        .timeline h2{            
+            font-weight: bold;
+        }
+        .timeline h2::after{
+            content: "";
+            position: absolute; 
+            top:0;
+            bottom: 0;
+            margin:auto;                  
+            width: 100%;
+            height: 1px;
+            background-color: #87a7b3;      
+            z-index: -1;      
+        }
+        .timeline li:nth-child(odd) h2::after{
+            right:0;
+        }
+        .timeline li:nth-child(even) h2::after{
+            left: 0;
+        }
+        .timeline p{
+            font-weight: 500;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="timeline-wrap">
+        <h1>漢末歷史年代表</h1>
+        <p>公元184年東漢末年黃巾之亂開始，至公元280年西晉統一，共96年歷史，以儒家政治道德觀念為核心主旨，同時揉合千百年來廣大民眾心理，表現對昏君賊臣大亂天下的痛恨，對明君良臣清平世界的渴慕。</p>
+        <ul class="timeline">
+            <li>
+                <a href="#">
+                    <h2>黃巾之亂</h2>
+                    <p>黃巾之亂，是中國歷史上東漢靈帝時的大規模民變，也是中國歷史上規模最大的以宗教形式（太平道）組織的起義之一，開始於漢靈帝光和七年（184年），由張角、張寶、張梁等人領導，對東漢朝廷的統治產生了巨大的衝擊。漢末三國時期一干著名群雄幾乎都有直接、間接參與討伐黃巾軍。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>董卓討伐戰</h2>
+                    <p>東漢末年關東各地太守刺史組織地方聯軍對抗把持朝廷的董卓的戰役。中平六年（189年），掌政的董卓廢少帝劉辯為弘農王，擁立其弟陳留王劉協為帝，實行恐怖統治。關東各地方長官見此，以討董為名起兵，推舉袁紹為盟主。雖然曹操、孫堅積極參戰，但其他軍隊只駐軍不加援助，而董卓又放棄洛陽，挾天子遷都長安，關東聯軍起了內訌，盟軍決裂，形成群雄割據的局面。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>官渡之戰</h2>
+                    <p>三國時期「三大戰役」之一，也是中國歷史上著名的以少勝多的戰役之一。東漢獻帝建安五年（200年），曹操軍與袁紹軍相持於官渡。曹軍焚毀袁軍糧草，使得袁軍喪失鬥志，繼而擊潰袁軍主力。此戰奠定曹操統一中國北方的基礎。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>赤壁之戰</h2>
+                    <p>208年（漢獻帝建安十三年），基本控制北方的曹操率大軍南下荊州，占據荊州的劉琮投降。曹操追擊劉備，孫權派遣魯肅探聽落難的劉備會否聯盟抗曹，劉備於是派遣諸葛亮出使江東協議結盟，孫權派遣都督周瑜、程普率軍與劉備組成聯軍，在長江赤壁以黃蓋詐降火攻，大破曹軍的連環船，曹操落荒北回。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>合肥之戰</h2>
+                    <p>建安四年，孫策取合肥，以顧雍為合肥長。建安五年，孫策遇刺身亡。後曹操表劉馥為揚州刺史，劉馥占領合肥，自後孫權屢攻合肥不克。太和六年，滿寵更治新城。終吳之世都未能進佔淮南尺寸之土。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>漢中之戰</h2>
+                    <p>由於漢中是益州北方的一個郡，接近長安三輔地區，而且易守難攻，因此劉備在214年平定益州後，於217年向北攻佔漢中，戰事維持兩年。最終，劉備領有漢中，控制中國西南地區，漢中同時也成為益州屏障，同年秋進位為漢中王，正式建立基業，不久後創立蜀漢。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>樊城之戰</h2>
+                    <p>亦可稱為關羽北伐，是漢末三國時期的一場重要戰役。此役中劉備大將關羽父子被孫權俘殺，劉備治下的部分荊州完全落入孫權手中，劉備與孫權關係破裂，此後發生夷陵之戰。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>夷陵之戰</h2>
+                    <p>是東漢末年、三國初年「三大戰役」（官渡之戰、赤壁之戰、夷陵之戰）中的最後一場。221年七月，即劉備稱帝三個月後，以替關羽報仇為由，揮兵東征，氣勢強勁。吳王孫權立即以陸遜率軍應戰，陸遜以逸待勞，擋住蜀漢軍攻勢，更在222年八月夷陵一帶以火攻打敗蜀軍。</p>
+                </a>
+            </li>            
+        </ul>
+    </div>
+</body>
+</html>

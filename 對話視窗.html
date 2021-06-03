@@ -29,10 +29,15 @@
             background-color: #e7d4b5;
         }
         .user{
-            display: flex;
+            display: flex; 
+            flex-shrink: 0;
+            margin-bottom: 20px;
+            align-items: flex-start; /* 文字對齊頂端 */
         }
         .user .avatar{
-            width: 60px;            
+            width: 60px;
+            text-align: center;
+            flex-shrink: 0; /* image不因為txt太多字變形 */            
         }
         .dialogue-pic{ 
             height: 60px;
@@ -42,7 +47,44 @@
         .dialogue-pic img{
             width: 100%;            
             vertical-align: middle;
+        }  
+        .user .txt{
+            background-color: #a0937d; 
+            border-radius: 5px;
+            padding: 10px;
+            position: relative;            
         }
+        .remote .txt{
+            margin-left: 20px; /* 距離左邊圖片20px  */
+            margin-right: 80px; /* 因為左邊圖片 60px 加上margin-left, 所以右邊距離 80px */
+            background-color: #ffe9d6;
+        }
+        .local .txt{
+            margin-right: 20px; 
+            margin-left: 80px;
+            order: -1;            
+        }
+        .local{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .remote .txt:before,
+        .local .txt:before{
+            content: "";
+            position: absolute;
+            top: 10px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+        .remote .txt:before{
+            left:-10px;
+            border-right: 10px solid #ffe9d6;
+        }
+        .local .txt:before{
+            border-left: 10px solid #a0937d;
+            right: -10px;
+        }
+        
     </style>
 
 </head>
@@ -66,6 +108,47 @@
                 <div class="name">烏拉拉</div>
             </div>
             <div class="txt">Hello 你好</div>
+        </div>
+        <div class="user remote">
+            <div class="avatar">
+                <div class="dialogue-pic">
+                    <img src="https://images.unsplash.com/photo-1617419086540-518c5b847b88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80" alt="">
+                </div>
+                <div class="name">嘎嘎</div>
+            </div>
+            <div class="txt">設計師
+                兩點剛好有人<br>
+                請問方便和您約三點嗎</div>
+        </div>
+        <div class="user local">
+            <div class="avatar">
+                <div class="dialogue-pic">
+                    <img src="https://images.unsplash.com/photo-1613467678197-6054e47c5fc0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80" alt="">
+                </div>
+                <div class="name">烏拉拉</div>
+            </div>
+            <div class="txt">您的預約完成✔️✔️
+                感謝您的預約，到時候見嘍❤️
+                Line@ :@gjs5065m
+                IG : cy_hair0314 ◀️有更多作品歡迎追蹤 👏</div>
+        </div>
+        <div class="user remote">
+            <div class="avatar">
+                <div class="dialogue-pic">
+                    <img src="https://images.unsplash.com/photo-1617419086540-518c5b847b88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80" alt="">
+                </div>
+                <div class="name">嘎嘎</div>
+            </div>
+            <div class="txt">詢問活動與價格</div>
+        </div>
+        <div class="user local">
+            <div class="avatar">
+                <div class="dialogue-pic">
+                    <img src="https://images.unsplash.com/photo-1613467678197-6054e47c5fc0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80" alt="">
+                </div>
+                <div class="name">烏拉拉</div>
+            </div>
+            <div class="txt">不好意思，稍後由專人立即為您回覆</div>
         </div>
     </div>
 </body>
