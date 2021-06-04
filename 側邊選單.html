@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>側邊選單</title>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="file:///D:/Microsoft%20VS%20Code/CSS/all.css" rel="stylesheet">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans JP', sans-serif;       
+        }
+        html, body{
+            height: 100%;
+            background-color: #f6e5e9;
+        }
+        .side-menu{
+            height: 100%;
+            width: 300px;
+            background-color: #e798ae;
+            display: flex;
+            flex-direction: column;
+            padding: 50px 0;
+            box-sizing: border-box;
+        }
+        .side-menu a{
+            text-decoration: none;
+            display: block;
+            color: #4a1c40;
+            padding: 10px;
+            position: relative;
+        }
+        .side-menu a + a::before{
+            content: "";
+            position: absolute;
+            border-top: 1px solid #4a2c40;
+            top: 0;
+            left: 10px;
+            right: 10px;
+            background-color: #4a1c40;
+        }
+        .side-menu form{
+            display: flex;
+            margin: 0 10px;
+            border-radius: 100px;
+            border: 1px solid #f6e5e9;            
+        }
+        .side-menu input,
+        .side-menu button{
+            border: none;
+            padding: 5px 10px;
+            background-color: transparent;
+            color: #f6e5e9;
+        }
+        .side-menu input{
+            width: 230px;            
+        }
+        .side-menu button{
+            width: 50px;
+        }   
+        .side-menu input:focus,
+        .side-menu button:focus{
+            outline: none;
+        }
+        nav a .fas{
+            margin-right: -1.1em;
+            transform: scale(0);
+            transition:  0.3s;
+        }
+        nav a .fab{
+            margin-right: -1.1em;
+            transform: scale(0);
+            transition:  0.3s;
+        }
+        nav a:hover .fas{
+            margin-right: 0;
+            transform: scale(1);
+            
+        }
+        nav a:hover .fab{
+            margin-right: 0;
+            transform: scale(1);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="side-menu">
+        <form>
+            <input type="search" placeholder="請輸入關鍵字">
+            <button><i class="fas fa-search"></i></button>
+        </form>
+        <nav>
+            <a href="#"><i class="fas fa-birthday-cake"></i>GIFTS & SERVICES</a>
+            <a href="#"><i class="fab fa-canadian-maple-leaf"></i>WOMEN'S FASHION</a>
+            <a href="#"><i class="fab fa-black-tie"></i>MEN'S FASHION</a>
+            <a href="#"><i class="fas fa-atom"></i>FRAGRANCE</a>
+            <a href="#"><i class="fas fa-air-freshener"></i>MAKE-UP</a>
+            <a href="#"><i class="fab fa-blackberry"></i>SKINCARE</a>
+            <a href="#"><i class="fas fa-chess-king"></i>JEWELRY & TIMEPIECES</a>
+            <a href="#"><i class="fas fa-baby"></i>KIDS & BABY</a>
+            <a href="#"><i class="fas fa-bookmark"></i>MAISON</a>
+            <a href="#"><i class="fas fa-book"></i>NEWS</a>
+            <a href="#"><i class="fab fa-confluence"></i>FASHION SHOWS</a>
+        </nav>
+    </div>
+    
+</body>
+</html>
