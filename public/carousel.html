@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    #ul-idxs{
+      margin: 50px auto;
+      bottom: 0px;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+    }
+    #ul-idxs>li{
+      margin:0 5px;
+      padding: 0;
+      display: block;
+      height: 112px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #ul-idxs img{
+      vertical-align: bottom;
+    }
+    #ul-idxs>li:hover{
+      transition: 0.5s;
+      transform: translateY(-10px);
+      box-shadow: 2px 5px 5px 5px rgb(128, 127, 127);
+    }
+    #ul-idxs>li.active{
+      transform: translateY(-10px);
+      transition: 0.5s;
+      box-shadow: 2px 5px 5px 5px rgb(128, 127, 127);
+    }
+  </style>
+</head>
+<body>
+  <header id="my-header">
+  </header>
+  <main id="carousel">
+    <div id="banner">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/banner1.jpg" class="d-block w-100 ">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner2.jpg" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner3.jpg" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner4.jpg" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner5.jpg" class="d-block w-100">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+      </div>
+      <ul id="ul-idxs">
+        <li class="active"><a href="javascript:;"><img src="img/minibanner1.jpg" data-target="img/banner1.jpg" class="my-small"></a></li>
+        <li><a href="javascript:;"><img src="img/minibanner2.jpg" data-target="img/banner2.jpg" class="my-small"></a></li>
+        <li><a href="javascript:;"><img src="img/minibanner3.jpg" data-target="img/banner3.jpg" class="my-small"></a></li>
+        <li><a href="javascript:;"><img src="img/minibanner4.jpg" data-target="img/banner4.jpg" class="my-small"></a></li>
+        <li><a href="javascript:;"><img src="img/minibanner5.jpg" data-target="img/banner5.jpg" class="my-small"></a></li>
+      </ul>
+    </div>
+  </main>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

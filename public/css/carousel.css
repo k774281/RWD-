@@ -1,0 +1,24 @@
+
+#ul-idxs{
+    margin:50px auto;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+#ul-idxs>li{
+    margin:0 5px;
+    padding: 0;
+    display: block;
+    height: 112px;
+}
+#ul-idxs>li:hover{
+    transition: 0.5s;
+    transform: translateY(-10px);
+    box-shadow: 2px 5px 5px 5px rgb(128, 127, 127);
+}
+#ul-idxs>li.active{
+    transform: translateY(-10px);
+    transition: 0.5s;
+    box-shadow: 2px 5px 5px 5px rgb(128, 127, 127);
+}

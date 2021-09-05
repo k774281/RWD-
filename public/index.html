@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/new-hot.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/t1-wrap.css">
+  <link rel="stylesheet" href="css/second-group.css">
+  <style>
+    #carousel{
+      margin: 100px 0;
+    }
+    .third-group{
+      height: 100vh;
+      background: url(https://images.unsplash.com/photo-1567160895307-ebd008647a00?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80) no-repeat center center/ cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        }
+    .login{
+      width: 400px;
+      height: 400px;
+      background-color: rgba(57, 62, 70, 0.6);
+      border-radius: 5px;
+      border: 3px solid #eeeeee;
+      box-shadow: 0 0 30px #393e46;
+      backdrop-filter: blur(3px); /* 模糊度 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-form{
+      width: 300px;
+      color: #eeeeee;
+    }
+    .login-form h2{
+      font-weight: bold;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #aaa;
+    }
+    .login-form .form-group{
+      margin-bottom: 20px;
+    }
+    .login-form label{
+      line-height: 3;
+    }
+    .login-form input{
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      line-height: 2;
+    }
+    .login-form input[type="checkbox"]{
+      display: flex;
+    }
+    .login-form .btn-group{
+      font-size: 0; /* 中間縫隙 */
+    }
+    .login-form .login-btn{
+      font-size: 16px;
+      border: none;
+      border-radius: 3px;
+      width: 140px;
+      padding: 5px 0;
+    }
+    .login-form .login-btn + .login-btn{
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header id="my-header">
+  </header>
+  <main id="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/banner1.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner2.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner3.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner4.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner5.jpg" class="d-block w-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </main>
+  <section class="first-group" id="first_position">
+    <div class="new-hot">
+      <div class="new-hot-container">
+        <div class="txt">
+          <h1>                    
+            本月 
+            <small>
+              新作特報
+            </small>
+          </h1>
+          <h3>使用我們9月的遊戲新作指南來安排您整月的遊戲計畫。</h3>
+          <button>了解更多</button>
+        </div>
+      </div>        
+    </div>
+    <div id="my-accordion">
+      <div>Hades | 8 月 13 日</div>
+      <div>在這款 Supergiant Games 所推出、屢獲殊榮的動作 Roguelike 遊戲裡，運用奧林匹斯的各種神力和神話武器。想辦法掙脫亡者之神的掌控，同時在次次都不同的逃脫過程中揭開更多故事情節。</div>
+      <div>Ghost of Tsushima 導演剪輯版 | 8 月 20 日</div>
+      <div>探索廣受好評的《Ghost of Tsushima》擴充版，進入全新區域，揭開新故事篇章等精彩內容；本版本更完整支援 3D 音效和觸覺回饋等 PS5 創新功能。</div>
+      <div>Madden NFL 22 | 8 月 20 日</div>
+      <div>今年，在 EA 開創性 NFL 系列的最新作品中擁抱榮耀，全新內容包含「特權球員」模式，您的決定將形塑您的職涯；全新的 X 因素能力可提升您的賽事表現，而創新的跑動強化功能則可以改善團隊戰略。</div>
+    </div>
+  </section>
+  <section class="new-game">
+    <div class="t1-wrap">
+      <div class="container">
+        <h1>暢銷遊戲立即預購
+        </h1>
+        <div class="txt">
+          <p>NEW YORK - New York is enduring its hottest temperatures of the year, and Governor Andrew Cuomo is urging residents to take the necessary steps to stay safe.</p>      
+          <p>"Forecasts are calling for a wave of extreme heat in the coming days and I am urging all New Yorkers to make sure they are taking all necessary precautions," Cuomo said in a statement. </p>
+          <p>"This type of weather can be especially dangerous for young children, the elderly and those with respiratory conditions. </p>
+          <p>Be sure to check on neighbors and limit outdoor activity to ensure that you and your loved ones remain safe and healthy through the extreme temperatures. And if you do visit beaches and pools, be sure to wear a mask and practice social distancing."</p>
+        </div>
+        <button>了解更多</button>
+      </div>
+    </div>
+    <div class="pre-order">
+      <div class="container">
+        <div class="txt">
+          <h1>探索Aliens: Fireteam Elite </h1>
+          <h3>自訂你的戰術小隊，創新的特長面板，獨特的挑戰卡系統，每次遊玩都能體驗新的遊戲方式。</h3>
+        </div>
+      </div>        
+    </div>
+    <div class="bk-coming">
+      <div class="txt">
+        <h1>現已推出和即將上市的精彩遊戲</h1>
+      </div>
+      <div class="wrap">
+        <div class="item">
+            <img src="/img/coming-game1.jpg" alt="">
+            <div class="txt">
+                <h2>Death Stranding Directors Cut</h2>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/img/coming-game2.jpg" alt="">
+            <div class="txt">
+                <h2>鬼滅之刃</h2>
+                <p>火之神血風譚</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/img/coming-game3.jpg" alt="">
+            <div class="txt">
+                <h2>FINAL FANTASY XIV</h2>
+                <p>Endwalker</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/img/coming-game4.jpg" alt="">
+            <div class="txt">
+                <h2>Back  4 Blood</h2>
+            </div>
+        </div>
+        <div class="item">
+          <img src="/img/coming-game5.jpg" alt="">
+          <div class="txt">
+              <h2>審判之逝</h2>
+              <p>湮滅的記憶</p>
+          </div>
+      </div>
+      <div class="item">
+            <img src="img/coming-game6.jpg" alt="">
+            <div class="txt">
+                <h2>Tales of Arise</h2>
+                <p>破曉傳奇</p>
+            </div>
+        </div>
+        <div class="item">
+          <img src="img/coming-game8.jpg" alt="">
+          <div class="txt">
+              <h2>Farcry 6</h2>
+          </div>
+      </div>
+      <div class="item">
+        <img src="img/coming-game9.jpg" alt="">
+        <div class="txt">
+            <h2>Fatal Frame</h2>
+            <p>Maiden of Black Water</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="second-group" id="third_position">
+    <div class="new-discount-wrap">
+      <div class="container">
+        <h1>全新優惠就在SP STORE</h1>
+        <div class="txt">
+          <p>On June 22nd, we face a critical election that offers New Yorkers an important opportunity to reimagine who represents us in city government.</p>
+          <p>With the Mayor, Public Advocate, Comptroller, Borough Presidents, District Attorneys, and all 51 City Council seats on that ballot, we have a chance to reinvigorate our city and elect leaders who put common sense ahead of partisanship.</p>
+          <p>Join us and help us restore New York.</p> 
+          </div>
+      </div>
+    </div>
+    <div class="discount">
+      <div class="container">
+        <div class="txt">
+          <h1>                    
+            Join SP Member
+          </h1>
+          <h3>每月遊戲，獨家優惠及升級其他服務，都在這裡</h3>
+          <button>立即註冊加入會員</button>
+        </div>
+      </div>        
+    </div>
+    <div class="discount-wrap">
+      <div class="container">
+        <h1>本月優惠別再錯過!</h1>
+        <div class="txt">
+          <p>超值折扣、精選收藏和季節優惠，一次滿足您對 PS5、PS4 和 PS VR 的需求。</p>
+        </div>
+      </div>
+    </div>
+    <div class="break-wrap">
+      <div class="break-item">
+          <div class="icon"><i class="fas fa-angle-double-down"></i></div>
+          <a href="javascript:;">熱門優惠</a>
+      </div>
+      <div class="break-item">
+          <div class="icon"><i class="fas fa-angle-double-down"></i></div>
+          <a href="javascript:;">折扣優惠</a>
+      </div>
+      <div class="break-item">
+          <div class="icon"><i class="fas fa-angle-double-down"></i></div>
+          <a href="javascript:;">免費</a>
+      </div>
+    </div>
+  </section>
+  <section class="third-group" id="second_position">
+    <div class="login">
+      <form class="login-form">
+          <h2>立即註冊會員</h2>
+          <div class="form-group">
+              <label for="user-id">帳號</label>
+              <input type="text" name="" id="user-id">
+              <span id="uname-msg"></span><br>
+          </div>
+          <div class="form-group">
+              <label for="user-password">密碼</label>
+              <input type="password" name="" id="user-password">
+              <span id="upwd-msg"></span><br>
+          </div>
+          <div class="btn-group">
+              <button class="login-btn">註冊</button>
+              <button class="login-btn">取消</button>
+          </div>
+      </form>
+    </div>
+  </section>
+  <footer id="footer">
+  </footer>
+
+  
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/footer.js"></script>
+
+
+
+  
+
+<script>
+
+
+  $("#my-accordion").accordion();
+  
+  
+  </script>
+
+  <script>
+//login
+
+$(":text").blur(function(){
+vali($(this),6,9,"帳號必须介于6-9位之間!");
+})
+function vali($txt,minilen,maxlen,msg){
+let $span=$txt.next();
+let value=$txt.val();
+if(value.length>=minilen&&value.length<=maxlen){
+    $span.html(`<img src='img/ok.png'>`);
+    return true;
+}else{
+    $span.html(`<img src='img/err.png'>${msg}`);
+    return false;
+}}
+$(":password").blur(function(){
+vali($(this),6,8,"密碼必須介於6-8位");
+})
+
+  </script>
+</body>
+</html>
