@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>試排版</title>    
+    <link href="file:///C:/React/prectice/css/all.css" rel="stylesheet">    
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300;1,400;1,700;1,900&family=Noto+Serif+TC:wght@200;300;400;500;700&family=Playfair+Display:wght@800&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .main_header .container{            
+            padding: 0 30px;
+            align-items: flex-start;
+            flex-direction: column;
+        }                  
+        .banner_container{
+            height: 100%;
+        }
+        .txt{
+            box-sizing: border-box;
+            padding: 50px;
+            position: relative;
+            text-align: center;
+            font-family: 'Lato', sans-serif;   
+            color: #231e23;         
+        }        
+        .break-item .txt{
+            padding: 20px;
+            font-weight: 400;
+        }
+        .third-wrap .txt{
+            width: 50%;            
+            padding: 20px;
+            display: flex;
+            flex-direction: column; 
+            text-align: left;
+        }
+        .mother-wrap .txt{
+            padding: 0 20px;
+        }
+        p{
+            font-family: 'Merriweather', serif;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 1.1em;
+            line-height: 1.5;
+        }
+        .banner .txt p{
+            font-size: 12px;
+            padding: 10px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+        }
+        h1{
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: #1b2021;
+            display: flex;          
+            position: relative;
+            width: 100%;
+            font-size: 56px; 
+            margin: 50px 0;
+        }
+        .hot-now-container h1{            
+            margin-right: 0.5em;
+            padding: 30px 15px;
+            font-size: 48px;
+            color: #a7bbc7;            
+            margin-bottom: 10px;
+        }   
+        .banner .txt h1{
+            font-size: 48px;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.3em;            
+            flex-direction: column;
+        }
+        .word-wrap h1{            
+            font-size: 80px; 
+            padding: 0 50px;
+            margin-bottom: 80px;
+        }
+        .break-item h1{
+            font-size: 24px;
+            margin: 0 10px;
+            justify-content: center;
+        }
+        .banner small{
+            display: block;
+            font-size: 24px;      
+        }
+
+
+
+
+        .main_header{
+            position: relative;
+            box-shadow: 0 3px 5px #adb6b8;
+        }
+        .main_header .logo{
+            text-decoration: none;
+            color: #ce1212;
+            font-size: 120px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+        }        
+        .main_header nav{            
+            display: flex;       
+            padding: 20px 0;
+            box-sizing: border-box;                       
+        }
+        .main_header:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #bdc7c9;
+            flex-grow: 1;
+            bottom: 60px;
+            left: 0;
+        }
+        .main_header nav a{
+            text-decoration: none;
+            color: #1b1a17;
+            padding:  0px 10px;               
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+        }
+        .main_header nav a:hover{
+            color: #be0000;
+        }
+
+        .banner{
+            width: 100%;
+            height: 100vh;
+            background-color: #a6d6d6;
+            background: 
+                    linear-gradient(115deg, #a6d6d6 50%, transparent 50%)
+                    center center / 100% 100%,
+                    url(https://images.unsplash.com/photo-1596612730945-9411c618e066?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) right center/ auto 100% ;
+                    position: relative;
+        }  
+        .banner:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 50px;
+            background-color: #e1e5ea;
+            position: absolute;
+            top: -80px;
+            left: 0;
+            z-index:-1;  
+        }     
+        .banner .txt{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        .banner .txt h1 small:after{
+            content: "";
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: #1b2021;
+            position: absolute;
+            bottom: -0.5em;
+            left: 0;
+        }
+        .banner .txt h3{
+            font-size: 14px;
+            padding: 10px;
+            font-family: 'Lato', sans-serif; 
+        }
+        .word-wrap h1:before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 5px;;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #d1d9d9;
+            margin: auto;
+        }
+        .word-wrap .txt:before,
+        .word-wrap .txt:after{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px; 
+        }
+        .word-wrap .txt:before{
+            top: 0;
+            left: 0;
+            border-left: 5px solid #d1d9d9;
+            border-top: 5px solid #d1d9d9;
+        }
+        .word-wrap .txt:after{
+            right: 0;
+            bottom:0;
+            border-right: 5px solid #d1d9d9;
+            border-bottom: 5px solid #d1d9d9;
+        }     
+        .break-wrap{
+            display: flex;
+            width: 1200px;
+            margin: auto;
+            /*background-color: #f5cebe;*/
+            padding-top: 75px; /* 因為突出的圓形超出父層, 需要把多出的部分補回 */
+        }
+        .break-item{
+            width: 370px;            
+            margin: 50px 15px;
+            text-align: center;
+            background-color: #fff;
+            border: 3px solid #161616;
+            border-radius: 5px;           
+        }
+        .break-item .icon{
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            margin: -75px auto 0;
+            font-size: 48px;
+            line-height: 150px;
+            color: #161616;
+            border-radius: 50%;
+            position: relative;            
+        }
+        .break-item:hover .fas{
+            animation: sway 0.2s linear infinite alternate;
+        }
+        /* 作出邊框線 */
+        .break-item .icon:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-top:  3px solid #161616; /* 用作出三角型的原理作出四個邊框後 , 再作圓角, 轉向45度角 */
+            border-bottom:  3px solid transparent;
+            border-left: 3px solid #161616;
+            border-right:  3px solid transparent;
+            /* 製作邊框時多出的8px, 需要在top 跟left扣回來才會剛好切齊邊線 */
+            top: -3px;
+            left: -3px;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        @keyframes sway{
+            0%{transform: rotate(-10deg);}
+            100%{transform: rotate(10deg);}
+        }
+        .second-word-wrap h1:before,
+        .second-word-wrap h1:after{
+            content: "";
+            display: block;
+            height: 5px;
+            flex-grow: 1;
+            background-color: #d1d9d9;
+            margin: auto;
+        }
+        .second-word-wrap h1:before{
+            margin-right: 0.3em;
+        }
+        .second-word-wrap h1:after{
+            margin-left: 0.3em;
+        }
+        .second-word-wrap .txt:before,
+        .second-word-wrap .txt:after{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px; 
+        }
+        .second-word-wrap .txt:before{
+            top: 0;
+            left: 0;
+            border-left: 5px solid #d1d9d9;
+            border-top: 5px solid #d1d9d9;
+        }
+        .second-word-wrap .txt:after{
+            right: 0;
+            bottom:0;
+            border-right: 5px solid #d1d9d9;
+            border-bottom: 5px solid #d1d9d9;
+        }
+        .third-wrap{
+            height: 100vh;
+            display: flex;
+        }
+        .third-wrap .item{
+            width: 370px; /* 1200/4 扣掉margin 15px*2 */
+            margin: 0 15px; 
+            display: flex;
+            background: white;
+            box-shadow: 0 10px 30px hsl(160, 0%, 0%, 0.5);
+        }
+        .third-wrap .pic{
+            width: 50%;            
+        }
+        .third-wrap .pic img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .third-wrap .txt h3{
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        .third-wrap .btn{
+            line-height: 1.5em;
+            color: #231e23;
+            border: 1px solid #231e23;
+            padding: 0 0.2em;
+            align-self: flex-end;
+            margin-top: auto;
+            text-decoration: none;
+            border-radius: 3px;
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .third-wrap .btn:hover{
+            color: #cf0000;
+            border: 1px solid #cf0000;
+        }
+        .fourth-wrap h1:before,
+        .fourth-wrap h1:after{
+            content: "";
+            display: block;
+            height: 5px;
+            flex-grow: 1;
+            background-color: #d1d9d9;
+            margin: auto;
+        }
+        .fourth-wrap h1:before{
+            margin-right: 0.3em;
+        }
+        .fourth-wrap h1:after{
+            margin-left: 0.3em;
+        }
+        .mother-wrap{
+            width: 1200px;
+            display: flex;
+            margin: auto;
+        }
+        .mother-wrap .item{
+            width: 368px;
+            margin: 15px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid #231e23;
+            transition: 0.5s;
+        }
+        .mother-wrap img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        .mother-wrap h2{
+           border-bottom: 1px solid #231e23; 
+           padding-bottom: 0.3em;
+           margin-bottom: 0.3em;
+           font-weight: 700;
+           font-family: 'Playfair Display', serif;
+        }
+        .mother-wrap .txt:before{
+            content: "";
+            position: absolute;/* 等於 display: block */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0px;
+            height: 0px;            
+            border-top: 50px solid transparent;
+            border-bottom: 0px solid white;
+            border-left: 184px solid white;
+            border-right: 184px solid white;
+            transform: translateY(-100%);
+        }
+        .mother-wrap .item:hover{
+            transform: translateY(-50px);            
+        }
+        .mother-wrap .item:hover .txt:before{
+            border-left: 184px solid #630000;
+            border-right: 184px solid #630000;
+        }
+        .mother-wrap .item:hover .txt{
+            background-image: linear-gradient(0deg, #ce1212, #630000);
+        }
+        .fiveth-wrap h1:before,
+        .fiveth-wrap h1:after{
+            content: "";
+            display: block;
+            height: 5px;
+            flex-grow: 1;
+            background-color: #d1d9d9;
+            margin: auto;
+        }
+        .fiveth-wrap h1:before{
+            margin-right: 0.3em;
+        }
+        .fiveth-wrap h1:after{
+            margin-left: 0.3em;
+        }
+        .main_footer{
+            padding: 150px 0 0 0;
+            background-color: #231e23;
+        }
+        .footer_item{
+            width: 0;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .footer_item h4{
+            font-size: 24px;
+            color: #dadfe2;
+            border-bottom: 1px dotted #fff;
+            margin-bottom: 0.5em;
+            padding-bottom: 0.5em;
+        }
+        .footer_item nav{
+            display: flex;
+            flex-direction: column;
+            font-family: 'Playfair Display', serif;
+        }
+        .footer_item nav a{
+            color: #f7fcfc;
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 5px 0;
+            font-family: 'Lato', sans-serif;  
+        }
+        .footer_subs{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer_subs form{
+            display: flex;
+            width: 100%;
+            margin: auto 0px;
+        }
+        .footer_subs input[type="text"],
+        .footer_subs input[type="submit"]{
+            border: none;
+            padding: 5px 10px;
+            outline: none;
+        }
+        .footer_subs input[type="text"]{
+            border-radius: 50px 0 0 50px;
+        }
+        .footer_subs input[type="submit"]{
+            color: #f7fcfc;
+            background-color: #343f56;
+            border-radius: 0 50px 50px 0;
+            font-family: 'Lato', sans-serif;
+        }
+        .copyright{
+            text-align: center;
+            padding: 10px 0px;
+            width: 100%;
+            background-color: #1b1a17;
+            color: white;
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .fourth{
+            background-color: #eeebdd;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="main_header">
+        <div class="container">
+            <a href="#" class="logo">VOGEEY</a>
+            <nav>
+                <a href="#">FASHION</a>
+                <a href="#">BEAUTY</a>
+                <a href="#">ENTERTAINMENT</a> 
+                <a href="#">LIFESTYLE</a>
+                <a href="#">LUXURY</a>
+                <a href="#">VIDEO</a>               
+            </nav>
+        </div>
+    </div>
+    <section class="section-group second">
+        <div class="hot-now-wrap">
+            <div class="hot-now-container">
+                <h1>HOT NOW</h1>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="banner_container">
+                <div class="txt">
+                    <h1>                    
+                        How a Medusa Sculpture 
+                        <small>
+                            From a Decade Ago Became #MeToo Art
+                        </small>
+                    </h1>
+                    <h3>By Julia Jacobs 2021/06</h3>
+                    <p>When artist Luciano Garbati made his sculpture of Medusa holding Perseus’ severed head — <br>an inversion of the centuries-old myth — feminism was not what he had in mind.</p>
+                </div>
+            </div>        
+        </div>
+    </section>
+    <section class="section-group third">
+        <div class="word-wrap">
+            <div class="container">
+            <h1>RIHANNA: A Star with a Beautiful Soul</h1>
+            <div class="txt">
+                <p>One of the hottest singers today is Rihanna, who, at 32, has achieved more than most stars her age. So far, she has sold over 60 million albums and won nine Grammy awards. Besides her work in music, she has also built a successful business and used her money to help others.</p>      
+                <p>Rihanna was born Robyn Rihanna Fenty in Barbados. She had a troubled family life and turned to singing as an escape. At 16, she was discovered by a music producer and moved to America. Soon she released her first album, Music of the Sun, which sold close to two million copies. This was followed by more hit albums and songs, including “Umbrella,” “Diamond,” and “Stay.”</p>
+                <p>In 2017, Rihanna created Fenty Beauty, the first beauty brand to offer 40 different shades of foundation. As a black woman, she had noticed a lack of foundations for darker-skinned women. She therefore created a brand for every skin tone under the sun. “I wanted everyone to feel included,” Rihanna said, and people love the results.</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="break-wrap">
+            <div class="break-item">
+                <div class="icon"><i class="fas fa-angle-double-down"></i></div>
+                <div class="txt">
+                    <h1>We Found Love</h1>
+                    <p>Rihanna debuted her latest music video, “We Found Love,” on Wednesday, Oct. 19. The tragic love story includes passionate highs and devastating lows, drawing presumed similarities to her ill-fated relationship with singer Chris Brown.</p>
+                </div>
+            </div>
+            <div class="break-item">
+                <div class="icon"><i class="fas fa-angle-double-down"></i></div>
+                <div class="txt">
+                    <h1>Only Girl (In the World)</h1>
+                    <p> Rihanna told JustJared.com that the video was filmed in a "big landscape" so she was the only person in the frame, echoing the song's title.</p>
+                </div>
+            </div>
+            <div class="break-item">
+                <div class="icon"><i class="fas fa-angle-double-down"></i></div>
+                <div class="txt">
+                    <h1>Rihanna's Work music videos</h1>
+                    <p>Rihanna has released two videos for the same song – but in truth, they’re both a bit boring – though there are some moments to savour thanks to dirty dancing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-group fourth">
+        <div class="second-word-wrap">
+            <div class="container">
+            <h1>Apple Flour: The Flour of the Future</h1>
+            <div class="txt">
+                <p>White flour is used in everything from bread to cakes and cookies. But another type of flour made from apples, of all things, might be coming soon to a supermarket near you.
+                Called apple pomace flour, it’s made with the leftovers from apple juice production─seeds, stems, and pulp.</p>      
+                <p>To make it, the leftover bits, or pomace, are drained, pressed into a thin layer, and dried. Normally, these bits are either thrown out or fed to livestock. But the apple flour process transforms them into flour that contains about four times as much fiber as white all-purpose flour.</p>
+                <p>Fiber is important because it helps control blood sugar and can even help with weight loss. Unfortunately, on average, Americans only eat 15 grams of fiber a day, well short of the 28 to 34 grams suggested by experts.</p>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="third-wrap">
+            <div class="container">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1563589173312-476d8c36b242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=658&q=80" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>gelato</h3>
+                        <p>the Italian style of ice cream (= a cold, soft, sweet food), made from milk, cream, sugar, and fruit or other flavours mixed together and frozen:</p>
+                        <a href="#" class="btn">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1560180474-e8563fd75bab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>NUTTY PALEO PUMPKIN TART</h3>
+                        <p>THIS NUTTY PALEO PUMPKIN TART COMBINES PUMPKIN, SPICES, NATURAL COCONUT SUGAR, AND COCONUT MILK TO MAKE THE MOST FLAVORFUL PUMPKIN TART FOR THE HOLIDAYS.</p>
+                        <a href="#" class="btn">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1609873539027-d4ad052cb6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>No-Knead Donuts</h3>
+                        <p>No-Knead Donuts are simply donuts that don’t reqiure a mixer, you just mix it by hand in minutes. And to really add a cherry on top of this recipe, you also don’t need a deep fryer because these little beauties are baked not fried!</p>
+                        <a href="#" class="btn">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="section-group fiveth">
+        <div class="fourth-wrap">
+            <div class="container">
+            <h1>Hunting for Mother’s Day Bargains</h1>
+            <div class="txt">
+                <p>21 Best Mother’s Day Freebies, Discounts and Deals</p>
+                <p>To help shoppers find Mother’s Day freebies, sales and deals, GOBankingRates rounded up some of the best offers out there, with the help of deals sites CouponSherpa, DealsPlus and DealNews, and listed them below. We found plenty of deals on typical Mother’s Day gifts like flowers, sweets, jewelry and mementos. There are also many Mother’s Day sales on women’s apparel and accessories.</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="mother-wrap">
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1622978147823-33d5e241e976?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="">
+                <div class="txt">
+                    <h2>manny.dream</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius sapiente et deleniti perferendis delectus tempore quos nam nihil voluptas odio neque quasi, eaque molestias velit dicta deserunt ipsam dolore.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1590156221187-1710315f710b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=675&q=80" alt="">
+                <div class="txt">
+                    <h2>manny.dream</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius sapiente et deleniti perferendis delectus tempore quos nam nihil voluptas odio neque quasi, eaque molestias velit dicta deserunt ipsam dolore.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1591375462077-800a22f5fba4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=741&q=80" alt="">
+                <div class="txt">
+                    <h2>manny.dream</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius sapiente et deleniti perferendis delectus tempore quos nam nihil voluptas odio neque quasi, eaque molestias velit dicta deserunt ipsam dolore.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-group sixth">
+        <div class="fiveth-wrap">
+            <div class="container">
+            <h1>Facts about da Vinci Aka Il Florentine</h1>
+            <div class="txt">
+                <p>Born in 1452 in the Italian countryside, Leonardo da Vinci is considered to be one of the greatest artists of all time. But unlike today’s stars, about whose lives we know every detail, many facts about Leonardo’s life and work are either misunderstood or not well known.</p>
+                <p>The most common mistake made about Leonardo is his surname. Many believe it to be “da Vinci” But “da Vinci” simply means”from Vinci.” In fact, Leonardo didn’t really have a surname in the way we think of surnames today. Leonardo’s full birth name—Leonardo di ser Piero da Vinci—means “Leonardo, (son) of ser Piero from Vinci” But his fellow painters just called him “Leonardo” or “Il Florentine” because he lived near the Italian city of Florence.</p>
+            </div>
+            </div>
+        </div>
+
+        
+        <div class="third-wrap">
+            <div class="container">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://cdn.britannica.com/s:800x1000/24/189624-050-F3C5BAA9/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>Mona Lisa</h3>
+                        <p>The subject’s softly modeled face shows his skillful handling of sfumato, an artistic technique that uses subtle gradations of light and shadow, rather than line, to model form.</p>
+                        <a href="#" class="btn">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://cdn.britannica.com/s:800x1000/04/95904-050-7EB39FC8/Last-Supper-wall-painting-restoration-Leonardo-da-1999.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>Last Supper</h3>
+                        <p>Depicting a sequential narrative, Leonardo illustrates several closely connected moments in the Gospels, including Matthew 26:21–28, in which Jesus declares that one of the Apostles will betray him and then institutes the Eucharist. </p>
+                        <a href="#" class="btn">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://cdn.britannica.com/s:800x1000/68/145968-050-01768DAD/Vitruvian-Man-Leonardo-da-Vinci-Gallerie-dellAccademia.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>Vitruvian Man</h3>
+                        <p>It is accompanied by notes, written in mirror script, on the ideal human proportions that the Roman architect Vitruvius laid out in a book on architecture from the 1st century BCE.</p>
+                        <a href="#" class="btn">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-group last">
+        <div class="main_footer">
+            <div class="container">
+                <div class="footer_item">
+                    <h4>MORE FROM VOGEEY</h4>
+                    <nav>
+                        <a href="#"><i class="fas fa-angle-right"></i>Fashion</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Beauty</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Arts & Lifestyle</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Runway</a>   
+                        <a href="#"><i class="fas fa-angle-right"></i>News</a> 
+                        <a href="#"><i class="fas fa-angle-right"></i>Video</a> 
+                        <a href="#"><i class="fas fa-angle-right"></i>Vogeey Shop</a>              
+                    </nav>
+                </div>      
+                <div class="footer_item">
+                    <h4>CONDE NAST BRITAIN</h4>
+                    <nav>
+                        <a href="#"><i class="fas fa-angle-right"></i>CN Traveller</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Glamour</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>GQ</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>House & Garden</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Johansens</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Tatler</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Vanity Fair</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>Wired</a>
+                        <a href="#"><i class="fas fa-angle-right"></i>World of Interiors</a>
+                    </nav>
+                </div>
+                <div class="footer_item footer_subs">
+                    <h4>scription</h4>
+                    <form>
+                        <input type="text" name="">
+                        <input type="submit" value="submit">
+                    </form>
+                </div>
+            </div>        
+            <div class="copyright">
+                &copy;2021 Yummy Yummy Sweet 
+            </div>
+        </div>    
+    </section>
+</body>
+</html>
